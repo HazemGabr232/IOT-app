@@ -1,23 +1,26 @@
 {
-  "name": "iot-first-try",
-  "version": "0.0.0",
-  "description": "IOT server- Node.js app",
-  "engines": {
-    "node": "10.x"
-  },
+  "name": "IOT-app",
+  "version": "1.0.0",
+  "description": "",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test": "node server.js"
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^7.1.2"
   },
-  
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HazemGabr232/IOT-app"
+    "url": "git+https://github.com/HazemGabr232/IOT-app.git"
   },
-  "keywords": [
-    "node",
-    "heroku"
-  ],
-  "license": "MIT"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HazemGabr232/IOT-app/issues"
+  },
+  "homepage": "https://github.com/HazemGabr232/IOT-app#readme"
 }
