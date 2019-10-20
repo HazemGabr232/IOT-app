@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="t"> hello world</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<input type="text" id="m">
+	<input type="button" onclick="sendMessage()" value="send">
+	<div id="chatBox">
+	</div>
+	<br>
+	<div>
+	<h4>LED1 </h4> 
+	<input type="button" onclick="sendLed1_on()" value="on">
+	<input type="button" onclick="sendLed1_off()" value="off">
+	</div>
+	
+	<div>
+	<h4>LED2 </h4>
+	<input type="button" onclick="sendLed2_on()" value="on">
+	<input type="button" onclick="sendLed2_off()" value="off">
+	</div>
+	
+	<div>
+	<h4>LED3 </h4>
+	<input type="button" onclick="sendLed3_on()" value="on">
+	<input type="button" onclick="sendLed3_off()" value="off">
+	</div>
+	
+	<script>
+		
+		HOST = "ws://192.168.43.248:9000";
+		ws = new WebSocket(HOST);
+
+		ws.onmessage = function(msg){
+			document.getElementById("chatBox").innerHTML += msg.data;
+		}
+
+		ws.onopen = function(){
+			ws.send("Hello Server!");
+		}
+		
+		function sendMessage(){
+			ws.send("client");
+		}
+		
+		function sendLed1_on(){
+			ws.send("on1");
+		}
+		function sendLed1_off(){
+			ws.send("off1");
+		}
+		function sendLed2_on(){
+			ws.send("on2");
+		}
+		function sendLed2_off(){
+			ws.send("off2");
+		}
+		function sendLed3_on(){
+			ws.send("on3");
+		}
+		function sendLed3_off(){
+			ws.send("off3");
+		}
+
+	</script>
+</body>
+</html>
