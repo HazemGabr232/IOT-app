@@ -34,7 +34,7 @@
 		ws = new WebSocket(HOST);
 
 		ws.onmessage = function(msg){
-			document.getElementById("chatBox").innerHTML += ("<br>"+msg.data);
+			document.getElementById("chatBox").innerHTML +=  msg.data +"<br>";
 		}
 
 		ws.onopen = function(){
