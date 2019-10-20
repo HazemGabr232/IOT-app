@@ -18,39 +18,45 @@ socetServer.on('connection', (socketClient) => {
 	socketClient.send("hello client" + count);
 
 	socketClient.on('message', function(msg) {
-		socetServer.clients.forEach(function(c){
 			if(msg =="client"){
 				socketClient.type = "browser"
 			}
 			else if(msg =="hardware"){
 				socketClient.type = "hardware"
 			}
-			
-			
-			else if(msg =="on1"){
-				socketClient.type = "browser"
-			}
+			else{
+			socetServer.clients.forEach(function(c){			
+			if(msg =="on1"){
+				
+				if (c.type == "hardware"){
+					c.send(msg);}
+				}
 			else if(msg =="off1"){
-				socketClient.type = "browser"
-			}
+				if (c.type == "hardware"){
+					c.send(msg);}
+				}
 			else if(msg =="on2"){
-				socketClient.type = "browser"
-			}
+				if (c.type == "hardware"){
+					c.send(msg);}
+				}
 			else if(msg =="off2"){
-				socketClient.type = "browser"
-			}
+				if (c.type == "hardware"){
+					c.send(msg);}
+				}
 			else if(msg =="on3"){
-				socketClient.type = "browser"
-			}
+				if (c.type == "hardware"){
+					c.send(msg);}
+				}
 			else if(msg =="off3"){
-				socketClient.type = "browser"
-			}
+				if (c.type == "hardware"){
+					c.send(msg);}
+				}
 			
 			
 			else {
 				c.send(msg);
-			}
-			
+			      }
+		        }	
 		});
 		console.log(msg);
 		
