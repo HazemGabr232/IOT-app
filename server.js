@@ -2,7 +2,7 @@ const express = require('express');
 const SocketServer = require('ws').Server;
 const path = require('path');
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 80;
 const INDEX = path.join(__dirname, '/pages/index.html');
 
 const server = express()
@@ -29,6 +29,7 @@ socetServer.on('connection', (socketClient) => {
 			
 			
 			 if(msg =="on1"){
+
 				if(c.type = "hardware"){
 					c.send(msg);
 				}
