@@ -2,7 +2,7 @@ const express = require('express');
 const SocketServer = require('ws').Server;
 const path = require('path');
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 9000;
 const INDEX = path.join(__dirname, '/pages/index.html');
 
 const server = express()
@@ -18,33 +18,45 @@ socetServer.on('connection', (socketClient) => {
 	socketClient.send("hello client" + count);
 
 	socketClient.on('message', function(msg) {
-		socetServer.clients.forEach(function(c){
 			if(msg =="client"){
 				socketClient.type = "browser"
 			}
 			else if(msg =="hardware"){
 				socketClient.type = "hardware"
 			}
-			
-			
-			else if(msg =="on1"){
+		socetServer.clients.forEach(function(c){
 
-				socketClient.type = "browser"
+			
+			
+			 if(msg =="on1"){
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
 			}
 			else if(msg =="off1"){
-				socketClient.type = "browser"
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
 			}
 			else if(msg =="on2"){
-				socketClient.type = "browser"
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
 			}
 			else if(msg =="off2"){
-				socketClient.type = "browser"
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
 			}
 			else if(msg =="on3"){
-				socketClient.type = "browser"
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
 			}
 			else if(msg =="off3"){
-				socketClient.type = "browser"
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
 			}
 			
 			
