@@ -24,6 +24,7 @@ socetServer.on('connection', (socketClient) => {
 			else if(msg =="hardware"){
 				socketClient.type = "hardware"
 			}
+		else{
 		socetServer.clients.forEach(function(c){
 
 			
@@ -67,7 +68,7 @@ socetServer.on('connection', (socketClient) => {
 			
 		});
 		console.log(msg);
-		
+	}	
 	});
 	
 	socketClient.on('close', () => console.log('Client disconnected'));
