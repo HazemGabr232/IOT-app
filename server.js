@@ -71,6 +71,15 @@ socetServer.on('connection', (socketClient) => {
 					c.send(msg);
 				}
 			});}
+
+		else {
+		socetServer.clients.forEach(function(c){
+
+				if(c.type = "browser"){
+					c.send(msg);
+				}
+			});}
+
 			
 		console.log(msg);
 		
