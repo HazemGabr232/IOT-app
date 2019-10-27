@@ -24,51 +24,56 @@ socetServer.on('connection', (socketClient) => {
 			else if(msg =="hardware"){
 				socketClient.type = "hardware"
 			}
-		else{
+		else if (msg =="on1"){
 		socetServer.clients.forEach(function(c){
 
-			
-			
-			 if(msg =="on1"){
+				if(c.type = "hardware"){
+					c.send(msg);
+				}
+			});}
+
+		else if (msg =="off1"){
+		socetServer.clients.forEach(function(c){
 
 				if(c.type = "hardware"){
 					c.send(msg);
 				}
-			}
-			else if(msg =="off1"){
+			});}
+
+		else if (msg =="on2"){
+		socetServer.clients.forEach(function(c){
+
 				if(c.type = "hardware"){
 					c.send(msg);
 				}
-			}
-			else if(msg =="on2"){
+			});}
+
+		else if (msg =="off2"){
+		socetServer.clients.forEach(function(c){
+
 				if(c.type = "hardware"){
 					c.send(msg);
 				}
-			}
-			else if(msg =="off2"){
+			});}
+
+		else if (msg =="on3"){
+		socetServer.clients.forEach(function(c){
+
 				if(c.type = "hardware"){
 					c.send(msg);
 				}
-			}
-			else if(msg =="on3"){
+			});}
+
+		else if (msg =="off3"){
+		socetServer.clients.forEach(function(c){
+
 				if(c.type = "hardware"){
 					c.send(msg);
 				}
-			}
-			else if(msg =="off3"){
-				if(c.type = "hardware"){
-					c.send(msg);
-				}
-			}
+			});}
 			
-			
-			else {
-				c.send(msg);
-			}
-			
-		});
 		console.log(msg);
-	}	
+		
 	});
 	
 	socketClient.on('close', () => console.log('Client disconnected'));

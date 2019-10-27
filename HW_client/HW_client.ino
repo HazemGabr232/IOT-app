@@ -10,7 +10,7 @@ const char *pass = "CSE@zu2020";
 #define PORT    9000
 #define URL     "/"
 
-#define led1	3
+#define led1	16
 #define led2	4
 #define led3	5
 
@@ -23,7 +23,7 @@ void websocketEvent(WStype_t type, uint8_t *data, size_t length){
 
     case(WStype_TEXT):
       Serial.printf("data: %s\n",data);
-	  char* s = (string) data;
+	  String s =  (char*)data;
 	  if (s == "on1"){
 		  digitalWrite(led1,HIGH);
 		  //led on
