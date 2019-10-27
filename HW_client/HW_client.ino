@@ -3,11 +3,11 @@
 
 WebSocketsClient wsc;
 
-const char *ssid = "CSE Dept";
-const char *pass = "CSE@zu2020";
+const char *ssid = "your ssid";
+const char *pass = "your pass";
 
-#define SERVER  "192.168.22.49"
-#define PORT    9000
+#define SERVER  "damp-brook-16044.herokuapp.com"
+#define PORT    80
 #define URL     "/"
 
 #define led1	16
@@ -26,30 +26,36 @@ void websocketEvent(WStype_t type, uint8_t *data, size_t length){
 	  String s =  (char*)data;
 	  if (s == "on1"){
 		  digitalWrite(led1,HIGH);
+      Serial.println("led1 high");
 		  //led on
 	  }
 	  else if (s == "off1"){
 		  //led off 
 		  digitalWrite(led1,LOW);
+     Serial.println("led1 low");
 	  }
 	  
 	  if (s == "on2"){
 		  digitalWrite(led2,HIGH);
+      Serial.println("led2 high");
 		  //led on
 	  }
 	  else if (s == "off2"){
 		  //led off 
 		  digitalWrite(led2,LOW);
+     Serial.println("led2 low");
 	  }
 	  
 	  
 	  	  if (s == "on3"){
 		  digitalWrite(led3,HIGH);
+      Serial.println("led3 high");
 		  //led on
 	  }
 	  else if (s == "off3"){
 		  //led off 
 		  digitalWrite(led3,LOW);
+     Serial.println("led3 low");
 	  }
 	  
 	  
